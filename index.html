@@ -12,7 +12,7 @@
   --p:#2ECEFF;--e:#7BDB5E;--r:#F5E547;--m:#FF9B3E;--a:#FF5F6E;
   --bg:#0a0a0a;--s1:#141414;--s2:#1c1c1c;--s3:#242424;
   --bdr:#2a2a2a;--bdr2:#383838;
-  --txt:#f0f0f0;--txt2:#a0a0a0;--txt3:#585858;
+  --txt:#f0f0f0;--txt2:#b0b0b0;--txt3:#585858;
   --display:'Bebas Neue',sans-serif;
   --body:'Plus Jakarta Sans',sans-serif;
 }
@@ -21,20 +21,20 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--bo
 
 /* NAV */
 .nav{
-  position:fixed;top:0;left:0;right:0;height:60px;
+  position:fixed;top:0;left:0;right:0;height:64px;
   display:flex;background:#0d0d0d;border-bottom:1px solid var(--bdr);
   z-index:200;
 }
 .nb{
   flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
   gap:2px;border:none;background:transparent;cursor:pointer;
-  font-family:var(--display);font-size:26px;color:var(--txt3);
+  font-family:var(--display);font-size:30px;color:var(--txt3);
   transition:all .2s;border-right:1px solid var(--bdr);
   position:relative;
 }
 .nb:last-child{border-right:none}
 .nb:hover{color:#666;background:#111}
-.nb span{font-family:var(--body);font-size:7.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:inherit;opacity:.55}
+.nb span{font-family:var(--body);font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:inherit;opacity:.55}
 .nb.active{color:#0a0a0a!important}
 .nb[data-i="0"].active{background:var(--p)}
 .nb[data-i="1"].active{background:var(--e)}
@@ -42,14 +42,14 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--bo
 .nb[data-i="3"].active{background:var(--m)}
 .nb[data-i="4"].active{background:var(--a)}
 .nb-pip{
-  position:absolute;bottom:7px;width:5px;height:5px;border-radius:50%;
+  position:absolute;bottom:8px;width:5px;height:5px;border-radius:50%;
   background:currentColor;opacity:0;transition:opacity .2s;
 }
 .nb.done .nb-pip{opacity:.5}
 .nb.active .nb-pip{opacity:0}
 
 /* PANELS */
-.panels{position:fixed;top:60px;bottom:0;left:0;right:0;overflow:hidden}
+.panels{position:fixed;top:64px;bottom:0;left:0;right:0;overflow:hidden}
 .panel{
   position:absolute;inset:0;overflow-y:auto;
   opacity:0;pointer-events:none;transform:translateY(10px);
@@ -58,7 +58,7 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--bo
 .panel.active{opacity:1;pointer-events:all;transform:translateY(0)}
 
 /* HERO */
-.hero{padding:30px 24px 24px;position:relative;overflow:hidden;flex-shrink:0}
+.hero{padding:32px 24px 28px;position:relative;overflow:hidden}
 .hero-ghost{
   position:absolute;top:-15px;right:-10px;
   font-family:var(--display);font-size:200px;line-height:1;
@@ -66,164 +66,164 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--bo
 }
 .badge{
   display:inline-flex;align-items:center;gap:6px;
-  padding:5px 14px;border-radius:100px;
-  font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
-  color:#0a0a0a;margin-bottom:14px;
+  padding:6px 16px;border-radius:100px;
+  font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  color:#0a0a0a;margin-bottom:16px;
 }
 .hero-title{
-  font-family:var(--display);font-size:48px;line-height:.92;
-  color:#fff;letter-spacing:1.5px;margin-bottom:12px;position:relative;
+  font-family:var(--display);font-size:58px;line-height:.92;
+  color:#fff;letter-spacing:1.5px;margin-bottom:16px;position:relative;
 }
-.hero-tagline{font-size:13.5px;color:var(--txt2);line-height:1.65;max-width:420px;position:relative}
+.hero-tagline{font-size:16px;color:var(--txt2);line-height:1.7;max-width:440px;position:relative}
 
-/* MISSION BLOCK */
-.section{padding:0 24px 16px}
+/* SECTIONS */
+.section{padding:0 24px 20px}
 .section-label{
-  font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;
-  color:var(--txt3);margin-bottom:10px;display:flex;align-items:center;gap:8px;
+  font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--txt3);margin-bottom:12px;display:flex;align-items:center;gap:10px;
 }
 .section-label::after{content:'';flex:1;height:1px;background:var(--bdr)}
 
+/* MISSION CARD — big description */
 .mission-card{
-  background:var(--s1);border:1px solid var(--bdr);border-radius:14px;
-  padding:18px 20px;margin-bottom:10px;
+  background:var(--s1);border:1px solid var(--bdr);border-radius:16px;
+  padding:22px 22px;margin-bottom:12px;
 }
-.mission-title{
-  font-size:13px;font-weight:700;color:#fff;margin-bottom:8px;
-  display:flex;align-items:center;gap:8px;
+.mission-what{
+  font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  color:var(--txt3);margin-bottom:10px;
 }
-.mission-title .icon{font-size:16px}
-.mission-text{font-size:13px;color:var(--txt2);line-height:1.7}
-.mission-text strong{color:var(--txt);font-weight:600}
+.mission-desc{
+  font-size:17px;color:var(--txt2);line-height:1.75;
+}
+.mission-desc strong{color:#fff;font-weight:700}
+
+/* OUTCOME BOX */
+.outcome-box{
+  border-radius:14px;padding:18px 22px;margin-bottom:20px;
+}
+.outcome-label{
+  font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(10,10,10,.6);margin-bottom:10px;
+}
+.outcome-list{
+  list-style:none;display:flex;flex-direction:column;gap:8px;
+}
+.outcome-list li{
+  font-size:16px;font-weight:600;color:#0a0a0a;
+  display:flex;align-items:flex-start;gap:10px;line-height:1.5;
+}
+.outcome-list li::before{content:'→';font-weight:700;flex-shrink:0;margin-top:1px}
 
 /* GUIDELINES */
-.guide-list{display:flex;flex-direction:column;gap:8px}
+.guide-list{display:flex;flex-direction:column;gap:10px}
 .guide-item{
-  display:flex;gap:12px;align-items:flex-start;
+  display:flex;gap:14px;align-items:flex-start;
   background:var(--s1);border:1px solid var(--bdr);
-  border-radius:12px;padding:14px 16px;
+  border-radius:14px;padding:18px 18px;
 }
 .guide-num{
-  width:26px;height:26px;border-radius:7px;flex-shrink:0;
+  width:32px;height:32px;border-radius:9px;flex-shrink:0;
   display:flex;align-items:center;justify-content:center;
-  font-family:var(--display);font-size:15px;color:#0a0a0a;margin-top:1px;
+  font-family:var(--display);font-size:18px;color:#0a0a0a;margin-top:2px;
 }
-.guide-body{}
-.guide-title{font-size:13px;font-weight:700;color:#ddd;margin-bottom:4px}
-.guide-desc{font-size:12.5px;color:var(--txt2);line-height:1.65}
+.guide-title{font-size:15px;font-weight:700;color:#ddd;margin-bottom:6px}
+.guide-desc{font-size:14.5px;color:var(--txt2);line-height:1.7}
+.guide-desc strong{color:var(--txt);font-weight:600}
 
 /* CHECKLIST */
-.checklist{display:flex;flex-direction:column;gap:7px}
+.checklist{display:flex;flex-direction:column;gap:8px}
 .check-item{
-  display:flex;align-items:flex-start;gap:10px;
+  display:flex;align-items:flex-start;gap:12px;
   background:var(--s1);border:1px solid var(--bdr);
-  border-radius:10px;padding:12px 14px;cursor:pointer;
-  transition:background .15s,border-color .15s;
-  user-select:none;
+  border-radius:12px;padding:14px 16px;cursor:pointer;
+  transition:background .15s,border-color .15s;user-select:none;
 }
 .check-item:hover{background:var(--s2)}
-.check-item.checked{border-color:var(--bdr2);opacity:.6}
+.check-item.checked{opacity:.55}
 .check-box{
-  width:20px;height:20px;border-radius:5px;flex-shrink:0;
+  width:22px;height:22px;border-radius:6px;flex-shrink:0;
   border:2px solid var(--bdr2);display:flex;align-items:center;justify-content:center;
-  font-size:11px;color:#0a0a0a;background:transparent;margin-top:1px;
+  font-size:13px;color:#0a0a0a;background:transparent;margin-top:2px;
   transition:all .15s;
 }
 .check-item.checked .check-box{border-color:transparent}
-.check-text{font-size:13px;color:var(--txt2);line-height:1.5}
+.check-text{font-size:14.5px;color:var(--txt2);line-height:1.55}
 .check-item.checked .check-text{text-decoration:line-through;color:var(--txt3)}
 
-/* PROGRESS ROW */
-.prog-row{
-  display:flex;align-items:center;gap:10px;
-  padding:0 24px 14px;
-}
+/* PROGRESS */
+.prog-row{display:flex;align-items:center;gap:12px;padding:0 0 12px}
 .prog-track{flex:1;height:4px;background:var(--bdr);border-radius:100px;overflow:hidden}
 .prog-fill{height:100%;border-radius:100px;width:0%;transition:width .35s ease}
-.prog-txt{font-size:11px;font-weight:700;color:var(--txt3);min-width:36px;text-align:right}
+.prog-txt{font-size:12px;font-weight:700;color:var(--txt3);min-width:36px;text-align:right}
 
-/* AI ASSIST */
+/* AI */
 .ai-block{
   margin:0 24px 12px;
   background:var(--s1);border:1px solid var(--bdr);border-radius:16px;
   overflow:hidden;
 }
 .ai-header{
-  display:flex;align-items:center;gap:10px;
-  padding:14px 18px;border-bottom:1px solid var(--bdr);
+  display:flex;align-items:center;gap:12px;
+  padding:16px 20px;border-bottom:1px solid var(--bdr);
   cursor:pointer;user-select:none;transition:background .15s;
 }
 .ai-header:hover{background:var(--s2)}
 .ai-spark{
-  width:32px;height:32px;border-radius:9px;
+  width:36px;height:36px;border-radius:10px;
   display:flex;align-items:center;justify-content:center;
-  font-size:16px;flex-shrink:0;
+  font-size:18px;flex-shrink:0;
 }
 .ai-header-text{flex:1}
-.ai-header-title{font-size:13px;font-weight:700;color:#fff}
-.ai-header-sub{font-size:11.5px;color:var(--txt3);margin-top:1px}
-.ai-chevron{font-size:18px;color:var(--txt3);transition:transform .2s;flex-shrink:0}
+.ai-header-title{font-size:15px;font-weight:700;color:#fff}
+.ai-header-sub{font-size:12px;color:var(--txt3);margin-top:2px}
+.ai-chevron{font-size:20px;color:var(--txt3);transition:transform .2s;flex-shrink:0}
 .ai-block.open .ai-chevron{transform:rotate(180deg)}
-
-.ai-body{display:none;padding:16px 18px}
+.ai-body{display:none;padding:18px 20px}
 .ai-block.open .ai-body{display:block}
-
-.ai-prompts{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px}
+.ai-prompts{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
 .ai-prompt-btn{
-  padding:7px 14px;border-radius:100px;border:1px solid var(--bdr2);
+  padding:8px 16px;border-radius:100px;border:1px solid var(--bdr2);
   background:transparent;color:var(--txt2);font-family:var(--body);
-  font-size:12px;font-weight:500;cursor:pointer;transition:all .15s;
+  font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;
 }
 .ai-prompt-btn:hover{border-color:#555;color:var(--txt);background:var(--s2)}
-
 .ai-custom{display:flex;gap:8px;margin-bottom:14px}
 .ai-input{
   flex:1;background:var(--s2);border:1px solid var(--bdr2);
-  border-radius:10px;padding:10px 14px;
-  color:var(--txt);font-family:var(--body);font-size:13px;
+  border-radius:10px;padding:12px 16px;
+  color:var(--txt);font-family:var(--body);font-size:14px;
   outline:none;transition:border-color .15s;
 }
 .ai-input:focus{border-color:#555}
 .ai-input::placeholder{color:var(--txt3)}
 .ai-go{
-  padding:10px 18px;border-radius:10px;border:none;
-  font-family:var(--body);font-size:12px;font-weight:700;
-  color:#0a0a0a;cursor:pointer;transition:opacity .15s;
-  letter-spacing:.5px;
+  padding:12px 20px;border-radius:10px;border:none;
+  font-family:var(--body);font-size:13px;font-weight:700;
+  color:#0a0a0a;cursor:pointer;transition:opacity .15s;letter-spacing:.5px;
+  white-space:nowrap;
 }
 .ai-go:hover{opacity:.85}
 .ai-go:disabled{opacity:.4;cursor:not-allowed}
-
 .ai-response{
-  background:var(--s2);border:1px solid var(--bdr);border-radius:10px;
-  padding:14px 16px;min-height:60px;display:none;
+  background:var(--s2);border:1px solid var(--bdr);border-radius:12px;
+  padding:16px 18px;display:none;
 }
 .ai-response.visible{display:block}
-.ai-response-text{font-size:13px;color:var(--txt2);line-height:1.75;white-space:pre-wrap}
-.ai-loading{
-  display:flex;align-items:center;gap:8px;
-  font-size:12px;color:var(--txt3);
-}
-.ai-dot{
-  width:6px;height:6px;border-radius:50%;background:var(--txt3);
-  animation:pulse 1.2s ease-in-out infinite;
-}
+.ai-response-text{font-size:14.5px;color:var(--txt2);line-height:1.8;white-space:pre-wrap}
+.ai-loading{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--txt3)}
+.ai-dot{width:6px;height:6px;border-radius:50%;background:var(--txt3);animation:pulse 1.2s ease-in-out infinite}
 .ai-dot:nth-child(2){animation-delay:.2s}
 .ai-dot:nth-child(3){animation-delay:.4s}
 @keyframes pulse{0%,80%,100%{transform:scale(.8);opacity:.4}40%{transform:scale(1.1);opacity:1}}
 
 .done-banner{
-  display:none;margin:0 24px 12px;
-  padding:14px 18px;border-radius:12px;
-  font-size:13px;font-weight:700;color:#0a0a0a;text-align:center;
-  letter-spacing:.5px;
+  display:none;margin:0 24px 14px;
+  padding:16px 20px;border-radius:14px;
+  font-size:14px;font-weight:700;color:#0a0a0a;text-align:center;letter-spacing:.5px;
 }
-
-.spacer{height:40px}
-
-/* divider */
-.divider{height:1px;background:var(--bdr);margin:4px 24px 16px}
-
+.divider{height:1px;background:var(--bdr);margin:4px 24px 20px}
+.spacer{height:48px}
 </style>
 </head>
 <body>
@@ -244,61 +244,61 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--bo
     <div class="hero-ghost">P</div>
     <span class="badge" style="background:var(--p)">✦ Positive Emotions</span>
     <h1 class="hero-title">CREATE A<br>JOY TREE</h1>
-    <p class="hero-tagline">Happiness isn't a solo thing — it grows when you share it. Your mission is to build a living artwork that captures what lifts your whole class up.</p>
+    <p class="hero-tagline">Happiness isn't a solo thing — it grows when you share it. Build a living artwork that captures what lifts your whole class up.</p>
   </div>
 
   <div class="section">
     <div class="section-label">Your Mission</div>
     <div class="mission-card">
-      <div class="mission-title"><span class="icon">🎯</span> What you're doing</div>
-      <div class="mission-text">Your class will <strong>create a large colourful paper tree</strong> together. Each student adds leaves with words, drawings, or moments that represent joy and positivity. By the end, you'll have a shared symbol of what makes your class flourish.</div>
+      <div class="mission-what">What you're doing</div>
+      <div class="mission-desc">Your class will <strong>build a large paper tree together</strong> on the wall. Each student creates leaves filled with words, drawings, or moments that represent joy, gratitude, and positivity. Every leaf goes on the tree with a sentence shared out loud. By the end, you'll have a <strong>shared living symbol</strong> of what makes your class flourish — and it stays up for the rest of the year.</div>
     </div>
-    <div class="mission-card">
-      <div class="mission-title"><span class="icon">📦</span> What you need</div>
-      <div class="mission-text"><strong>Brown craft paper or cardboard</strong> (for the trunk) · <strong>Coloured construction paper</strong> (for leaves) · Scissors · Markers or pens · Tape or blu-tack · A wall big enough to hold the tree</div>
-    </div>
-    <div class="mission-card">
-      <div class="mission-title"><span class="icon">⏱</span> Time</div>
-      <div class="mission-text">Around <strong>25–35 minutes</strong> total — 5 min setup, 10 min making leaves, 10 min building the tree, 5–10 min debrief.</div>
+    <div class="outcome-box" style="background:var(--p)">
+      <div class="outcome-label">By the end of this activity, your class will have</div>
+      <ul class="outcome-list">
+        <li>A colourful tree on the wall filled with every student's positive moments</li>
+        <li>Named the feelings and people that genuinely lift each of you up</li>
+        <li>Discovered surprising things you have in common with classmates</li>
+      </ul>
     </div>
   </div>
 
   <div class="section">
-    <div class="section-label">How to do it — Guidelines</div>
+    <div class="section-label">How to do it</div>
     <div class="guide-list">
       <div class="guide-item">
         <div class="guide-num" style="background:var(--p)">1</div>
         <div class="guide-body">
-          <div class="guide-title">Set up the tree first</div>
-          <div class="guide-desc">Draw or tape a tree trunk with 5–6 branches onto a large sheet. Stick it on the wall at a reachable height before the activity starts. Branches should be empty — students fill them.</div>
+          <div class="guide-title">Set up the tree base on the wall</div>
+          <div class="guide-desc">Draw or tape a tree trunk with <strong>5–6 spreading branches</strong> onto large brown craft paper. Stick it to a wall everyone can reach. The branches should be completely empty — your class fills them.</div>
         </div>
       </div>
       <div class="guide-item">
         <div class="guide-num" style="background:var(--p)">2</div>
         <div class="guide-body">
-          <div class="guide-title">Colour-code your leaves</div>
-          <div class="guide-desc">Use different leaf colours to represent different types of positivity. Suggested: <strong>Yellow</strong> = a joyful memory, <strong>Green</strong> = something you're grateful for, <strong>Blue</strong> = a person who makes you happy. Each student gets 2–3 leaves.</div>
+          <div class="guide-title">Cut out your colourful leaves</div>
+          <div class="guide-desc">Each student gets <strong>2–3 leaf-shaped cutouts</strong> in different colours. Colour-code them: <strong>Yellow</strong> = a joyful memory, <strong>Green</strong> = something you're grateful for, <strong>Blue</strong> = a person who makes you happy.</div>
         </div>
       </div>
       <div class="guide-item">
         <div class="guide-num" style="background:var(--p)">3</div>
         <div class="guide-body">
           <div class="guide-title">Write something real, not perfect</div>
-          <div class="guide-desc">One word, a short phrase, or a quick drawing — anything that genuinely represents a positive moment or feeling for you. There are no wrong answers. Think: "When did I last feel genuinely good? What was happening?"</div>
+          <div class="guide-desc">On each leaf, write one word, a short phrase, or draw a quick symbol. Ask yourself: <strong>"When did I last feel genuinely good? What was happening?"</strong> There are no wrong answers here.</div>
         </div>
       </div>
       <div class="guide-item">
         <div class="guide-num" style="background:var(--p)">4</div>
         <div class="guide-body">
-          <div class="guide-title">Add your leaf and say something</div>
-          <div class="guide-desc">When you place your leaf on the tree, say one sentence out loud about what you wrote. You don't need to explain it fully — just name it. "This is the feeling I get when I finish something hard."</div>
+          <div class="guide-title">Place your leaf and say something</div>
+          <div class="guide-desc">When you stick your leaf on the tree, <strong>say one sentence out loud</strong> about what you wrote. You don't need to explain it deeply — just name it. "This is the feeling I get when I finish something hard."</div>
         </div>
       </div>
       <div class="guide-item">
         <div class="guide-num" style="background:var(--p)">5</div>
         <div class="guide-body">
-          <div class="guide-title">Stand back and notice</div>
-          <div class="guide-desc">Once everyone has added their leaves, step back. What patterns do you see? What surprised you? What do many people have in common? These observations are your debrief — no facilitator needed.</div>
+          <div class="guide-title">Step back and notice patterns</div>
+          <div class="guide-desc">Once everyone's leaves are on, step back together. <strong>What do you see?</strong> What surprised you? What do many people have in common? These observations are your debrief — they're the actual lesson.</div>
         </div>
       </div>
     </div>
@@ -307,17 +307,17 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--bo
   <div class="divider"></div>
 
   <div class="section">
-    <div class="section-label">Your Checklist</div>
-    <div class="prog-row" style="padding:0 0 10px">
+    <div class="section-label">Activity Checklist</div>
+    <div class="prog-row">
       <div class="prog-track"><div class="prog-fill" id="pf0" style="background:var(--p)"></div></div>
       <span class="prog-txt" id="pt0">0 / 5</span>
     </div>
     <div class="checklist" id="cl0">
-      <div class="check-item" onclick="tick(this,0)"><div class="check-box" style="--c:var(--p)"></div><span class="check-text">Tree base is set up on the wall with 5–6 branches</span></div>
-      <div class="check-item" onclick="tick(this,0)"><div class="check-box" style="--c:var(--p)"></div><span class="check-text">Leaves are cut out and colour-coded</span></div>
-      <div class="check-item" onclick="tick(this,0)"><div class="check-box" style="--c:var(--p)"></div><span class="check-text">Every student has written on their leaves</span></div>
-      <div class="check-item" onclick="tick(this,0)"><div class="check-box" style="--c:var(--p)"></div><span class="check-text">All leaves are added to the tree</span></div>
-      <div class="check-item" onclick="tick(this,0)"><div class="check-box" style="--c:var(--p)"></div><span class="check-text">Class debrief done — patterns and surprises discussed</span></div>
+      <div class="check-item" onclick="tick(this,0)"><div class="check-box"></div><span class="check-text">Tree base is up on the wall with 5–6 empty branches</span></div>
+      <div class="check-item" onclick="tick(this,0)"><div class="check-box"></div><span class="check-text">Leaves are cut out and colour-coded by category</span></div>
+      <div class="check-item" onclick="tick(this,0)"><div class="check-box"></div><span class="check-text">Every student has written or drawn on their leaves</span></div>
+      <div class="check-item" onclick="tick(this,0)"><div class="check-box"></div><span class="check-text">All leaves are on the tree — each person shared a sentence</span></div>
+      <div class="check-item" onclick="tick(this,0)"><div class="check-box"></div><span class="check-text">Class stood back and discussed patterns and surprises</span></div>
     </div>
   </div>
   <div class="done-banner" id="db0" style="background:var(--p)">🌳 Joy Tree complete! Leave it up for the rest of the programme.</div>
@@ -335,18 +335,16 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--bo
     </div>
     <div class="ai-body">
       <div class="ai-prompts">
-        <button class="ai-prompt-btn" onclick="runAI(0,'Give me 5 creative ideas for what to write on a Joy Tree leaf — things that represent genuine happiness for a secondary school student in Singapore.')">Joy leaf ideas</button>
-        <button class="ai-prompt-btn" onclick="runAI(0,'What are some positive emotions beyond just happiness? Give me a list with a short explanation of each one, written for a teenager.')">Types of positivity</button>
-        <button class="ai-prompt-btn" onclick="runAI(0,'Help me think of a meaningful memory from school — ask me 3 quick questions to help me discover one.')">Find my memory</button>
+        <button class="ai-prompt-btn" onclick="runAI(0,'Give me 5 creative ideas for what to write on a Joy Tree leaf — things that represent genuine happiness for a secondary school student in Singapore.')">Leaf ideas</button>
+        <button class="ai-prompt-btn" onclick="runAI(0,'What are some positive emotions beyond just happiness? Give me a list with a short explanation of each, written for a teenager.')">Types of positivity</button>
+        <button class="ai-prompt-btn" onclick="runAI(0,'Help me think of a meaningful positive memory from school — ask me 3 quick questions to help me discover one.')">Find my memory</button>
         <button class="ai-prompt-btn" onclick="runAI(0,'What are some symbols or drawings I could put on a leaf to represent gratitude, joy, or pride? Give me 8 creative visual ideas.')">Drawing ideas</button>
       </div>
       <div class="ai-custom">
         <input class="ai-input" id="ai-in0" placeholder="Ask anything about this activity..." onkeydown="if(event.key==='Enter')runAI(0,this.value)">
         <button class="ai-go" style="background:var(--p)" onclick="runAI(0,document.getElementById('ai-in0').value)">Ask ✦</button>
       </div>
-      <div class="ai-response" id="ai-res0">
-        <div class="ai-response-text" id="ai-txt0"></div>
-      </div>
+      <div class="ai-response" id="ai-res0"><div class="ai-response-text" id="ai-txt0"></div></div>
     </div>
   </div>
   <div class="spacer"></div>
@@ -358,61 +356,61 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--bo
     <div class="hero-ghost">E</div>
     <span class="badge" style="background:var(--e)">✦ Engagement</span>
     <h1 class="hero-title">CLASS ENGAGEMENT<br>PLAYBOOK</h1>
-    <p class="hero-tagline">You know what keeps you focused better than anyone else does. This mission is about turning that knowledge into something your whole class can actually use.</p>
+    <p class="hero-tagline">You know what keeps you focused better than anyone else does. Turn that knowledge into something your whole class can actually use all year.</p>
   </div>
 
   <div class="section">
     <div class="section-label">Your Mission</div>
     <div class="mission-card">
-      <div class="mission-title"><span class="icon">🎯</span> What you're doing</div>
-      <div class="mission-text">In groups, you'll design an <strong>"Engagement Playbook"</strong> — a poster or booklet filled with rituals, practices, and activities that help your class stay energised, focused, and included. Think of it like a <strong>game plan for staying engaged all year.</strong></div>
+      <div class="mission-what">What you're doing</div>
+      <div class="mission-desc">In groups, you'll design a <strong>Class Engagement Playbook</strong> — a poster packed with rituals, habits, and activities that help your class stay energised, focused, and included. Think of it as a <strong>game plan your whole class co-creates and owns</strong>. After every group designs their page, the class votes on the best ideas, and the top 3 become a pledge everyone commits to together.</div>
     </div>
-    <div class="mission-card">
-      <div class="mission-title"><span class="icon">📦</span> What you need</div>
-      <div class="mission-text"><strong>A3 paper or large cards</strong> · Markers · Dot stickers for voting · Groups of 4–5 students</div>
-    </div>
-    <div class="mission-card">
-      <div class="mission-title"><span class="icon">⏱</span> Time</div>
-      <div class="mission-text">Around <strong>35–45 minutes</strong> total — 5 min intro, 10 min brainstorm, 15 min design, 10 min gallery vote, 5 min commit.</div>
+    <div class="outcome-box" style="background:var(--e)">
+      <div class="outcome-label">By the end of this activity, your class will have</div>
+      <ul class="outcome-list">
+        <li>A class-owned set of engagement rituals you actually designed</li>
+        <li>Voted on and committed to 3 practices to use all year</li>
+        <li>Understood what keeps each other focused, energised, and included</li>
+      </ul>
     </div>
   </div>
 
   <div class="section">
-    <div class="section-label">How to do it — Guidelines</div>
+    <div class="section-label">How to do it</div>
     <div class="guide-list">
       <div class="guide-item">
         <div class="guide-num" style="background:var(--e)">1</div>
         <div class="guide-body">
-          <div class="guide-title">Form groups and pick roles</div>
-          <div class="guide-desc">Groups of 4–5. Choose roles: <strong>Scribe</strong> (writes ideas), <strong>Designer</strong> (makes it look good), <strong>Presenter</strong> (shares with class), <strong>Idea Generator</strong> (keeps energy high). Roles can overlap.</div>
+          <div class="guide-title">Form groups and assign roles</div>
+          <div class="guide-desc">Groups of 4–5. Pick roles: <strong>Scribe</strong> (writes ideas down), <strong>Designer</strong> (makes it look good), <strong>Presenter</strong> (shares with class), <strong>Idea Generator</strong> (keeps energy flowing). Roles can overlap — choose what fits you.</div>
         </div>
       </div>
       <div class="guide-item">
         <div class="guide-num" style="background:var(--e)">2</div>
         <div class="guide-body">
-          <div class="guide-title">Brainstorm your engagement ideas</div>
-          <div class="guide-desc">Discuss 3 questions in your group: (1) What helps YOU personally focus in class? (2) What could instantly lift the energy when everyone's low? (3) What makes you actually want to participate? Write everything — no filters yet.</div>
+          <div class="guide-title">Brainstorm with 3 questions</div>
+          <div class="guide-desc">Discuss these in your group — no filtering, everything goes on paper first: <strong>(1)</strong> What helps you personally focus in class? <strong>(2)</strong> What could instantly lift the energy when everyone's low? <strong>(3)</strong> What makes you actually want to participate?</div>
         </div>
       </div>
       <div class="guide-item">
         <div class="guide-num" style="background:var(--e)">3</div>
         <div class="guide-body">
-          <div class="guide-title">Structure your Playbook page into 3 zones</div>
-          <div class="guide-desc"><strong>ENERGISE</strong> — rituals that boost the room's energy. <strong>FOCUS</strong> — habits that help everyone concentrate. <strong>INCLUDE</strong> — practices that make every student feel seen and part of things. Each idea gets a short punchy name.</div>
+          <div class="guide-title">Design your Playbook with 3 zones</div>
+          <div class="guide-desc">On A3 paper, organise your ideas into: <strong>ENERGISE</strong> (rituals that boost the room), <strong>FOCUS</strong> (habits that help everyone concentrate), <strong>INCLUDE</strong> (practices that make every student feel part of it). Give each idea a short punchy name — like a move in a game.</div>
         </div>
       </div>
       <div class="guide-item">
         <div class="guide-num" style="background:var(--e)">4</div>
         <div class="guide-body">
           <div class="guide-title">Gallery walk and vote</div>
-          <div class="guide-desc">Post all playbooks around the room. Do a silent walk with dot stickers. You have 3 stickers — place them on ideas you'd actually want the class to use. You can spread them or put all 3 on one idea you really believe in.</div>
+          <div class="guide-desc">Post all Playbooks around the room. Everyone does a <strong>silent gallery walk</strong> with 3 dot stickers. Vote for ideas you'd actually want the class to use. You can spread your stickers or put all 3 on one idea you feel strongly about.</div>
         </div>
       </div>
       <div class="guide-item">
         <div class="guide-num" style="background:var(--e)">5</div>
         <div class="guide-body">
-          <div class="guide-title">Commit to the top 3 as a class</div>
-          <div class="guide-desc">Count the votes together. The top 3 ideas become your <strong>Class Engagement Pledge</strong>. Write them on a card, everyone signs it, and it goes up on the wall. You're now accountable to each other — in a good way.</div>
+          <div class="guide-title">Lock in the top 3 as a class</div>
+          <div class="guide-desc">Count votes together. The <strong>top 3 ideas</strong> become your Class Engagement Pledge. Write them on a card, <strong>everyone signs it</strong>, and it goes up next to the Joy Tree. You're now accountable to each other — in the best way.</div>
         </div>
       </div>
     </div>
@@ -421,17 +419,17 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--bo
   <div class="divider"></div>
 
   <div class="section">
-    <div class="section-label">Your Checklist</div>
-    <div class="prog-row" style="padding:0 0 10px">
+    <div class="section-label">Activity Checklist</div>
+    <div class="prog-row">
       <div class="prog-track"><div class="prog-fill" id="pf1" style="background:var(--e)"></div></div>
       <span class="prog-txt" id="pt1">0 / 5</span>
     </div>
     <div class="checklist" id="cl1">
-      <div class="check-item" onclick="tick(this,1)"><div class="check-box"></div><span class="check-text">Groups formed and roles assigned</span></div>
+      <div class="check-item" onclick="tick(this,1)"><div class="check-box"></div><span class="check-text">Groups formed and roles chosen</span></div>
       <div class="check-item" onclick="tick(this,1)"><div class="check-box"></div><span class="check-text">Brainstorm done — ideas for all 3 questions written down</span></div>
-      <div class="check-item" onclick="tick(this,1)"><div class="check-box"></div><span class="check-text">Playbook page designed with 3 zones (Energise / Focus / Include)</span></div>
-      <div class="check-item" onclick="tick(this,1)"><div class="check-box"></div><span class="check-text">Gallery walk done and votes counted</span></div>
-      <div class="check-item" onclick="tick(this,1)"><div class="check-box"></div><span class="check-text">Top 3 ideas committed to and signed by the class</span></div>
+      <div class="check-item" onclick="tick(this,1)"><div class="check-box"></div><span class="check-text">Playbook designed with 3 zones (Energise / Focus / Include)</span></div>
+      <div class="check-item" onclick="tick(this,1)"><div class="check-box"></div><span class="check-text">Gallery walk done and votes tallied</span></div>
+      <div class="check-item" onclick="tick(this,1)"><div class="check-box"></div><span class="check-text">Top 3 ideas on a pledge card — signed by everyone</span></div>
     </div>
   </div>
   <div class="done-banner" id="db1" style="background:var(--e)">📖 Playbook complete! Now actually use those 3 ideas.</div>
@@ -443,7 +441,7 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--bo
       <div class="ai-spark" style="background:rgba(123,219,94,.15);color:var(--e)">✦</div>
       <div class="ai-header-text">
         <div class="ai-header-title">AI Idea Generator</div>
-        <div class="ai-header-sub">Need engagement ideas? Ask here</div>
+        <div class="ai-header-sub">Need engagement ritual ideas? Ask here</div>
       </div>
       <div class="ai-chevron">⌄</div>
     </div>
@@ -452,15 +450,13 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--bo
         <button class="ai-prompt-btn" onclick="runAI(1,'Give me 6 creative classroom engagement rituals that could work for a secondary school class in Singapore. Make them fun, short, and actually doable.')">Ritual ideas</button>
         <button class="ai-prompt-btn" onclick="runAI(1,'What are 5 quick ways a class could re-energise when everyone feels tired or unmotivated? Keep each idea to 2 sentences.')">Energy boosters</button>
         <button class="ai-prompt-btn" onclick="runAI(1,'How can a class make sure quieter or more introverted students feel included and heard? Give 5 practical ideas.')">Inclusion ideas</button>
-        <button class="ai-prompt-btn" onclick="runAI(1,'Help me give my engagement idea a catchy name. Ask me to describe my idea and then suggest 3 possible names for it.')">Name my idea</button>
+        <button class="ai-prompt-btn" onclick="runAI(1,'Help me give my engagement idea a catchy name. Ask me to describe my idea first, then suggest 3 possible names for it.')">Name my idea</button>
       </div>
       <div class="ai-custom">
         <input class="ai-input" id="ai-in1" placeholder="Ask anything about engagement..." onkeydown="if(event.key==='Enter')runAI(1,this.value)">
         <button class="ai-go" style="background:var(--e)" onclick="runAI(1,document.getElementById('ai-in1').value)">Ask ✦</button>
       </div>
-      <div class="ai-response" id="ai-res1">
-        <div class="ai-response-text" id="ai-txt1"></div>
-      </div>
+      <div class="ai-response" id="ai-res1"><div class="ai-response-text" id="ai-txt1"></div></div>
     </div>
   </div>
   <div class="spacer"></div>
@@ -472,61 +468,61 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--bo
     <div class="hero-ghost">R</div>
     <span class="badge" style="background:var(--r)">✦ Relationships</span>
     <h1 class="hero-title">WEB OF<br>CONNECTIONS</h1>
-    <p class="hero-tagline">Every person in this room is linked to at least one other person in a way they haven't discovered yet. Your mission is to make those invisible connections visible.</p>
+    <p class="hero-tagline">Every person in this room is linked to at least one other in a way they haven't discovered yet. Your mission is to make those invisible threads visible.</p>
   </div>
 
   <div class="section">
     <div class="section-label">Your Mission</div>
     <div class="mission-card">
-      <div class="mission-title"><span class="icon">🎯</span> What you're doing</div>
-      <div class="mission-text">Using <strong>string and name tags</strong>, your class will physically build a web that links classmates through shared interests, qualities, and fun facts. The web you create becomes a map of your class's connections — real, visible, and surprising.</div>
+      <div class="mission-what">What you're doing</div>
+      <div class="mission-desc">Using <strong>yarn and name tags</strong>, your class will physically build a web in the centre of a circle — connecting classmates through shared interests, qualities, and fun facts. Each connection is said out loud before the string is passed on. By the end, you'll have a <strong>real, visible map of your class's relationships</strong>, and you'll physically feel what happens when one part of the web moves.</div>
     </div>
-    <div class="mission-card">
-      <div class="mission-title"><span class="icon">📦</span> What you need</div>
-      <div class="mission-text"><strong>A ball of yarn or string</strong> · Index cards or thick paper (name tags) · Markers · A hole punch · A camera to photograph the finished web</div>
-    </div>
-    <div class="mission-card">
-      <div class="mission-title"><span class="icon">⏱</span> Time</div>
-      <div class="mission-text">Around <strong>30–40 minutes</strong> — 10 min making name tags, 15 min building the web, 10 min debrief and photo.</div>
+    <div class="outcome-box" style="background:var(--r)">
+      <div class="outcome-label">By the end of this activity, your class will have</div>
+      <ul class="outcome-list">
+        <li>Discovered surprising connections you didn't know existed</li>
+        <li>Physically felt how linked every person in the room is</li>
+        <li>A class photo of the web to display all year</li>
+      </ul>
     </div>
   </div>
 
   <div class="section">
-    <div class="section-label">How to do it — Guidelines</div>
+    <div class="section-label">How to do it</div>
     <div class="guide-list">
       <div class="guide-item">
         <div class="guide-num" style="background:var(--r)">1</div>
         <div class="guide-body">
           <div class="guide-title">Make your name tag node</div>
-          <div class="guide-desc">Write your name large on a card. Then draw or write 3 things: a <strong>hobby</strong>, a <strong>food you love</strong>, and a <strong>hidden talent</strong> (can be funny or unexpected). Punch a hole and loop a short piece of string through it — this is your node in the web.</div>
+          <div class="guide-desc">Write your name large on a card. Add 3 things: a <strong>hobby</strong>, a <strong>food you love</strong>, and a <strong>hidden talent</strong> (funny or real). Punch a hole and loop a short string through — this card is your node in the web.</div>
         </div>
       </div>
       <div class="guide-item">
         <div class="guide-num" style="background:var(--r)">2</div>
         <div class="guide-body">
-          <div class="guide-title">Stand in a circle</div>
-          <div class="guide-desc">Everyone stands in a circle holding their name tag card. One person starts with the ball of yarn, holds the end, and says: <strong>"I'm connecting to [name] because we both [shared thing]."</strong> Then passes the ball across the circle to that person.</div>
+          <div class="guide-title">Stand in a circle and start the web</div>
+          <div class="guide-desc">Everyone stands in a circle holding their card. One person starts with the ball of yarn, holds the end, and says: <strong>"I'm connecting to [name] because we both [shared thing]."</strong> Then pass the ball across to that person.</div>
         </div>
       </div>
       <div class="guide-item">
         <div class="guide-num" style="background:var(--r)">3</div>
         <div class="guide-body">
           <div class="guide-title">Keep passing — build the web</div>
-          <div class="guide-desc">Each person holds their section of yarn before passing the ball on. After 10–15 passes, a web forms in the centre of the circle. Every student must make <strong>at least one connection</strong> before the round ends.</div>
+          <div class="guide-desc">Each person holds their section before tossing the ball on to someone new. After 10–15 passes, a web forms in the centre of the circle. <strong>Every student makes at least one connection</strong> before the round ends.</div>
         </div>
       </div>
       <div class="guide-item">
         <div class="guide-num" style="background:var(--r)">4</div>
         <div class="guide-body">
           <div class="guide-title">Tug the web — feel the connection</div>
-          <div class="guide-desc">When the web is built, one person gently tugs their section. Everyone holding the yarn will feel it. Then discuss: in a class, when one person struggles or rises, everyone feels it — even if they don't realise it.</div>
+          <div class="guide-desc">With everyone holding the web, one person gently tugs their section. Everyone holding the yarn <strong>feels it</strong>. Then reflect together: in a class, when one person struggles or rises, everyone feels it — even if they don't realise it.</div>
         </div>
       </div>
       <div class="guide-item">
         <div class="guide-num" style="background:var(--r)">5</div>
         <div class="guide-body">
-          <div class="guide-title">Photograph and display</div>
-          <div class="guide-desc">Take a wide or top-down photo of the web while students hold it up. Print it out, attach the name tags around it, and display it in the classroom. This web is your class for the year.</div>
+          <div class="guide-title">Photograph it and put it up</div>
+          <div class="guide-desc">Take a wide photo of the web while everyone holds it. Print it, attach the name cards around it, and display it in the classroom. <strong>This web is your class for the year.</strong></div>
         </div>
       </div>
     </div>
@@ -535,16 +531,16 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--bo
   <div class="divider"></div>
 
   <div class="section">
-    <div class="section-label">Your Checklist</div>
-    <div class="prog-row" style="padding:0 0 10px">
+    <div class="section-label">Activity Checklist</div>
+    <div class="prog-row">
       <div class="prog-track"><div class="prog-fill" id="pf2" style="background:var(--r)"></div></div>
       <span class="prog-txt" id="pt2">0 / 5</span>
     </div>
     <div class="checklist" id="cl2">
       <div class="check-item" onclick="tick(this,2)"><div class="check-box"></div><span class="check-text">Name tag nodes made — name, hobby, food, hidden talent</span></div>
-      <div class="check-item" onclick="tick(this,2)"><div class="check-box"></div><span class="check-text">Class standing in a circle with yarn ready</span></div>
+      <div class="check-item" onclick="tick(this,2)"><div class="check-box"></div><span class="check-text">Everyone is standing in a circle with yarn ready</span></div>
       <div class="check-item" onclick="tick(this,2)"><div class="check-box"></div><span class="check-text">Every student has made at least one connection out loud</span></div>
-      <div class="check-item" onclick="tick(this,2)"><div class="check-box"></div><span class="check-text">Web tug moment done and discussed</span></div>
+      <div class="check-item" onclick="tick(this,2)"><div class="check-box"></div><span class="check-text">Web tug moment done and discussed as a class</span></div>
       <div class="check-item" onclick="tick(this,2)"><div class="check-box"></div><span class="check-text">Web photographed and displayed in the classroom</span></div>
     </div>
   </div>
@@ -564,17 +560,15 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--bo
     <div class="ai-body">
       <div class="ai-prompts">
         <button class="ai-prompt-btn" onclick="runAI(2,'Give me 10 unexpected things two people might have in common that could be used to connect classmates in a web activity. Make them fun and specific.')">Connection starters</button>
-        <button class="ai-prompt-btn" onclick="runAI(2,'I need ideas for my name tag node. What are some interesting or funny hidden talents a secondary school student might have? Give me 8 ideas.')">Hidden talent ideas</button>
-        <button class="ai-prompt-btn" onclick="runAI(2,'What are some good debrief questions to ask after doing a Web of Connections activity with a class? Give 5 questions that spark real reflection.')">Debrief questions</button>
+        <button class="ai-prompt-btn" onclick="runAI(2,'What are some interesting or funny hidden talents a secondary school student might have? Give me 8 ideas for my name tag node.')">Hidden talents</button>
+        <button class="ai-prompt-btn" onclick="runAI(2,'What are 5 good debrief questions to ask after doing a Web of Connections activity? Questions that spark real reflection, not just yes or no answers.')">Debrief questions</button>
         <button class="ai-prompt-btn" onclick="runAI(2,'What does research say about how positive relationships in school affect learning and well-being? Keep it short and written for a teenager.')">Why it matters</button>
       </div>
       <div class="ai-custom">
         <input class="ai-input" id="ai-in2" placeholder="Ask anything about relationships..." onkeydown="if(event.key==='Enter')runAI(2,this.value)">
         <button class="ai-go" style="background:var(--r)" onclick="runAI(2,document.getElementById('ai-in2').value)">Ask ✦</button>
       </div>
-      <div class="ai-response" id="ai-res2">
-        <div class="ai-response-text" id="ai-txt2"></div>
-      </div>
+      <div class="ai-response" id="ai-res2"><div class="ai-response-text" id="ai-txt2"></div></div>
     </div>
   </div>
   <div class="spacer"></div>
@@ -586,61 +580,61 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--bo
     <div class="hero-ghost">M</div>
     <span class="badge" style="background:var(--m)">✦ Meaning</span>
     <h1 class="hero-title">CLASS VISION<br>SCROLL</h1>
-    <p class="hero-tagline">What kind of class do you want to look back on at the end of the year? Your mission is to answer that question — together, in writing, in a way that actually sticks.</p>
+    <p class="hero-tagline">What kind of class do you want to look back on at the end of the year? Your mission is to answer that — together, in writing, in a way that actually sticks.</p>
   </div>
 
   <div class="section">
     <div class="section-label">Your Mission</div>
     <div class="mission-card">
-      <div class="mission-title"><span class="icon">🎯</span> What you're doing</div>
-      <div class="mission-text">In groups, you'll <strong>draft and decorate a Vision Scroll</strong> — a long strip of paper that captures your class's shared purpose, values, and aspirations. At the end, the whole class co-writes a <strong>unified Vision Statement</strong> that everyone signs. This is your north star for the year.</div>
+      <div class="mission-what">What you're doing</div>
+      <div class="mission-desc">In groups, you'll <strong>draft and decorate a Vision Scroll</strong> — a long strip of paper capturing your class's shared values, purpose, and aspirations. After each group presents, the whole class finds common ground and <strong>co-writes a single unified Vision Statement</strong> that every student signs. This becomes your class's north star — something to return to at key moments all year.</div>
     </div>
-    <div class="mission-card">
-      <div class="mission-title"><span class="icon">📦</span> What you need</div>
-      <div class="mission-text"><strong>Long strips of kraft/brown paper</strong> (or taped A3 sheets) · Markers, pens, coloured pencils · Stickers and washi tape if available · Groups of 4–5</div>
-    </div>
-    <div class="mission-card">
-      <div class="mission-title"><span class="icon">⏱</span> Time</div>
-      <div class="mission-text">Around <strong>40–50 minutes</strong> — 5 min reflection, 10 min values discussion, 15 min scroll creation, 10 min presentations, 10 min unified statement.</div>
+    <div class="outcome-box" style="background:var(--m)">
+      <div class="outcome-label">By the end of this activity, your class will have</div>
+      <ul class="outcome-list">
+        <li>Identified the values your class genuinely stands for</li>
+        <li>A decorated Vision Scroll created by students, not handed down</li>
+        <li>A unified class Vision Statement signed by everyone</li>
+      </ul>
     </div>
   </div>
 
   <div class="section">
-    <div class="section-label">How to do it — Guidelines</div>
+    <div class="section-label">How to do it</div>
     <div class="guide-list">
       <div class="guide-item">
         <div class="guide-num" style="background:var(--m)">1</div>
         <div class="guide-body">
-          <div class="guide-title">Start with silent reflection</div>
-          <div class="guide-desc">Before talking to anyone, spend 2 minutes thinking: <strong>"What kind of class do I want to look back on at the end of the year?"</strong> Write down 1–2 thoughts privately first. This stops the loudest voice from dominating.</div>
+          <div class="guide-title">Start with 2 minutes of silent thinking</div>
+          <div class="guide-desc">Before talking to anyone, write your personal answer to: <strong>"What kind of class do I want to look back on at the end of the year?"</strong> Writing first stops the loudest voice from shaping everyone else's thinking.</div>
         </div>
       </div>
       <div class="guide-item">
         <div class="guide-num" style="background:var(--m)">2</div>
         <div class="guide-body">
-          <div class="guide-title">Agree on your group's 3–5 values</div>
-          <div class="guide-desc">Share your reflections and agree on 3–5 values your group believes this class should stand for. Use the word bank if helpful: <em>Respect · Curiosity · Courage · Kindness · Excellence · Fun · Growth · Inclusion · Honesty · Creativity</em> — or invent your own.</div>
+          <div class="guide-title">Agree on 3–5 group values</div>
+          <div class="guide-desc">Share your reflections and agree on <strong>3–5 values</strong> your group believes this class should stand for. Word bank if helpful: <em>Respect · Curiosity · Courage · Kindness · Excellence · Fun · Growth · Inclusion · Honesty · Creativity</em>. For each value, name <strong>why</strong> you chose it — the why is where the meaning lives.</div>
         </div>
       </div>
       <div class="guide-item">
         <div class="guide-num" style="background:var(--m)">3</div>
         <div class="guide-body">
-          <div class="guide-title">Design your scroll</div>
-          <div class="guide-desc">Write your values in large letters on the scroll. Add symbols, quotes, and drawings that represent each value. Title it: <strong>"WE ARE [YOUR CLASS] AND WE STAND FOR..."</strong> Make it look like it matters — because it does.</div>
+          <div class="guide-title">Design and decorate your scroll</div>
+          <div class="guide-desc">Write your values in <strong>large letters</strong> on a long strip of paper. Add symbols, quotes, and drawings. Title it: <strong>"WE ARE [YOUR CLASS] AND WE STAND FOR..."</strong> Make it look like something that matters — because it does.</div>
         </div>
       </div>
       <div class="guide-item">
         <div class="guide-num" style="background:var(--m)">4</div>
         <div class="guide-body">
           <div class="guide-title">Present and find common ground</div>
-          <div class="guide-desc">Each group unrolls their scroll and shares. Look for values that appear across multiple groups — those are your strongest candidates for the class vision. Notice when different words mean the same thing.</div>
+          <div class="guide-desc">Each group unrolls and shares. Look for <strong>values that appear across multiple groups</strong> — those are your strongest candidates for the class vision. Notice when different words mean the same thing.</div>
         </div>
       </div>
       <div class="guide-item">
         <div class="guide-num" style="background:var(--m)">5</div>
         <div class="guide-body">
-          <div class="guide-title">Write the unified Vision Statement</div>
-          <div class="guide-desc">Together as a class, write 1–3 sentences starting with: <strong>"As [class name], we commit to..."</strong> Every student signs it. Display it where it can be read. Return to it at key moments throughout the year.</div>
+          <div class="guide-title">Write the unified Vision Statement together</div>
+          <div class="guide-desc">As a full class, write <strong>1–3 sentences</strong> starting with: <em>"As [class name], we commit to..."</em> Every student signs the scroll. Display it where it can be read. Return to it at key moments throughout the year.</div>
         </div>
       </div>
     </div>
@@ -649,16 +643,16 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--bo
   <div class="divider"></div>
 
   <div class="section">
-    <div class="section-label">Your Checklist</div>
-    <div class="prog-row" style="padding:0 0 10px">
+    <div class="section-label">Activity Checklist</div>
+    <div class="prog-row">
       <div class="prog-track"><div class="prog-fill" id="pf3" style="background:var(--m)"></div></div>
       <span class="prog-txt" id="pt3">0 / 5</span>
     </div>
     <div class="checklist" id="cl3">
-      <div class="check-item" onclick="tick(this,3)"><div class="check-box"></div><span class="check-text">Silent reflection done — personal thoughts written down first</span></div>
-      <div class="check-item" onclick="tick(this,3)"><div class="check-box"></div><span class="check-text">Group has agreed on 3–5 values with reasons for each</span></div>
-      <div class="check-item" onclick="tick(this,3)"><div class="check-box"></div><span class="check-text">Vision Scroll designed and decorated</span></div>
-      <div class="check-item" onclick="tick(this,3)"><div class="check-box"></div><span class="check-text">All groups have presented and common values identified</span></div>
+      <div class="check-item" onclick="tick(this,3)"><div class="check-box"></div><span class="check-text">Silent reflection done — personal answers written down first</span></div>
+      <div class="check-item" onclick="tick(this,3)"><div class="check-box"></div><span class="check-text">Group agreed on 3–5 values with a reason for each one</span></div>
+      <div class="check-item" onclick="tick(this,3)"><div class="check-box"></div><span class="check-text">Vision Scroll designed, decorated and titled</span></div>
+      <div class="check-item" onclick="tick(this,3)"><div class="check-box"></div><span class="check-text">All groups presented — common values identified across scrolls</span></div>
       <div class="check-item" onclick="tick(this,3)"><div class="check-box"></div><span class="check-text">Unified Class Vision Statement written and signed by everyone</span></div>
     </div>
   </div>
@@ -678,17 +672,15 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--bo
     <div class="ai-body">
       <div class="ai-prompts">
         <button class="ai-prompt-btn" onclick="runAI(3,'Give me 10 class values that secondary school students in Singapore might genuinely connect with. For each one, give a one-sentence explanation of what it means in a school context.')">Class values list</button>
-        <button class="ai-prompt-btn" onclick="runAI(3,'Help me write a class Vision Statement. I will tell you our values and you suggest 3 different versions of a 2-sentence Vision Statement we could choose from. Ask me for our values first.')">Write my vision</button>
-        <button class="ai-prompt-btn" onclick="runAI(3,'What are some powerful symbols or drawings that represent values like courage, kindness, growth, and curiosity? Give me 8 visual ideas for a scroll.')">Symbol ideas</button>
-        <button class="ai-prompt-btn" onclick="runAI(3,'What does having a sense of meaning and purpose do for a student\'s well-being and academic performance? Explain it simply for a teenager.')">Why meaning matters</button>
+        <button class="ai-prompt-btn" onclick="runAI(3,'Help me write a class Vision Statement. Ask me what our top values are first, then suggest 3 different versions of a 2-sentence Vision Statement we could choose from.')">Write my vision</button>
+        <button class="ai-prompt-btn" onclick="runAI(3,'What are some powerful symbols or drawings that represent values like courage, kindness, growth, and curiosity? Give me 8 visual ideas for decorating a scroll.')">Symbol ideas</button>
+        <button class="ai-prompt-btn" onclick="runAI(3,'What does having a sense of meaning and purpose do for a student\'s well-being and performance? Explain it simply for a teenager.')">Why meaning matters</button>
       </div>
       <div class="ai-custom">
         <input class="ai-input" id="ai-in3" placeholder="Ask anything about meaning or values..." onkeydown="if(event.key==='Enter')runAI(3,this.value)">
         <button class="ai-go" style="background:var(--m)" onclick="runAI(3,document.getElementById('ai-in3').value)">Ask ✦</button>
       </div>
-      <div class="ai-response" id="ai-res3">
-        <div class="ai-response-text" id="ai-txt3"></div>
-      </div>
+      <div class="ai-response" id="ai-res3"><div class="ai-response-text" id="ai-txt3"></div></div>
     </div>
   </div>
   <div class="spacer"></div>
@@ -700,33 +692,33 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--bo
     <div class="hero-ghost">A</div>
     <span class="badge" style="background:var(--a)">✦ Accomplishment</span>
     <h1 class="hero-title">CLASS<br>TROPHY WALL</h1>
-    <p class="hero-tagline">Winning isn't the only kind of accomplishment. Showing up, trying something hard, helping someone — these count too. Your mission is to make every student's growth visible.</p>
+    <p class="hero-tagline">Winning isn't the only kind of accomplishment. Showing up, trying something hard, helping someone — these count too. Make every student's growth visible.</p>
   </div>
 
   <div class="section">
     <div class="section-label">Your Mission</div>
     <div class="mission-card">
-      <div class="mission-title"><span class="icon">🎯</span> What you're doing</div>
-      <div class="mission-text">You'll design a <strong>Trophy Wall</strong> — a dedicated display that showcases every student's individual milestones and achievements. This isn't just about grades. It's about recognising <strong>every kind of growth</strong>, including the ones that usually go unnoticed.</div>
+      <div class="mission-what">What you're doing</div>
+      <div class="mission-desc">You'll design a <strong>Trophy Wall</strong> — a dedicated classroom display that showcases every student's individual milestones and achievements. This activity starts by <strong>redefining what a win actually is</strong> — beyond grades and prizes. Then every student makes a personal Trophy Card, gives anonymous peer recognition, and the whole class builds the wall together before closing with a ritual that marks the moment.</div>
     </div>
-    <div class="mission-card">
-      <div class="mission-title"><span class="icon">📦</span> What you need</div>
-      <div class="mission-text"><strong>A5 Trophy Card templates</strong> (printed or handmade) · Sticky note stars or small stickers · Markers · A dedicated wall section with a banner header</div>
-    </div>
-    <div class="mission-card">
-      <div class="mission-title"><span class="icon">⏱</span> Time</div>
-      <div class="mission-text">Around <strong>35–45 minutes</strong> — 10 min redefining wins, 10 min making Trophy Cards, 8 min Shout-Out Round, 7 min building the wall, 5–10 min closing ritual.</div>
+    <div class="outcome-box" style="background:var(--a)">
+      <div class="outcome-label">By the end of this activity, your class will have</div>
+      <ul class="outcome-list">
+        <li>Expanded what "accomplishment" means beyond academic results</li>
+        <li>Every student's wins — past and current — displayed on the wall</li>
+        <li>Received genuine anonymous recognition from a classmate</li>
+      </ul>
     </div>
   </div>
 
   <div class="section">
-    <div class="section-label">How to do it — Guidelines</div>
+    <div class="section-label">How to do it</div>
     <div class="guide-list">
       <div class="guide-item">
         <div class="guide-num" style="background:var(--a)">1</div>
         <div class="guide-body">
           <div class="guide-title">Redefine what "winning" means</div>
-          <div class="guide-desc">Before anything else, have a class discussion: <strong>What counts as an accomplishment?</strong> Challenge the idea that only grades and prizes count. Add answers to a list on the board — speaking up in class, helping a classmate, finishing something you almost gave up, trying something new all count.</div>
+          <div class="guide-desc">Have a class discussion: <strong>"What counts as an accomplishment?"</strong> Push past grades and trophies. Speaking up in class, helping a classmate, finishing something you almost gave up — all of these count. <strong>Write the expanded list on the board</strong> before anyone starts their card.</div>
         </div>
       </div>
       <div class="guide-item">
@@ -740,21 +732,21 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--bo
         <div class="guide-num" style="background:var(--a)">3</div>
         <div class="guide-body">
           <div class="guide-title">The Shout-Out Round</div>
-          <div class="guide-desc">Each student gets 2 sticky note stars. Anonymously write a genuine recognition for a classmate: <strong>"I think [name] deserves a trophy for..."</strong> Be specific. Stick it to their card. No generic compliments — name something real you've actually noticed.</div>
+          <div class="guide-desc">Each student gets <strong>2 sticky note stars</strong>. Anonymously write a genuine recognition for a classmate: <em>"I think [name] deserves a trophy for..."</em> Be specific — name something real you've actually noticed. Stick it to their card. No generic compliments.</div>
         </div>
       </div>
       <div class="guide-item">
         <div class="guide-num" style="background:var(--a)">4</div>
         <div class="guide-body">
-          <div class="guide-title">Build the Trophy Wall display</div>
-          <div class="guide-desc">Post all cards on a dedicated wall section with the banner: <strong>"WE GROW. WE ACHIEVE. WE CELEBRATE."</strong> Arrange neatly. Leave space on each card — this wall should grow over the year as new wins get added.</div>
+          <div class="guide-title">Build the Trophy Wall</div>
+          <div class="guide-desc">Post all cards on a dedicated wall section with the banner: <strong>"WE GROW. WE ACHIEVE. WE CELEBRATE."</strong> Arrange them neatly and leave space on each card — this wall grows over the year as new wins get added.</div>
         </div>
       </div>
       <div class="guide-item">
         <div class="guide-num" style="background:var(--a)">5</div>
         <div class="guide-body">
           <div class="guide-title">Close with a moment that marks it</div>
-          <div class="guide-desc">Everyone stands. Facilitator: <strong>"Raise your hand if someone recognised something in you today that you didn't know others noticed."</strong> Let that sit. Close with a class clap, cheer, or fist-bump — whatever feels natural. The goal is to mark the moment as meaningful.</div>
+          <div class="guide-desc">Everyone stands. Facilitator: <strong>"Raise your hand if someone recognised something in you today that you didn't know others noticed."</strong> Let that sit. Close with a class clap, cheer, or fist-bump — whatever feels natural. The goal is to <strong>mark the moment as meaningful</strong>.</div>
         </div>
       </div>
     </div>
@@ -763,16 +755,16 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--bo
   <div class="divider"></div>
 
   <div class="section">
-    <div class="section-label">Your Checklist</div>
-    <div class="prog-row" style="padding:0 0 10px">
+    <div class="section-label">Activity Checklist</div>
+    <div class="prog-row">
       <div class="prog-track"><div class="prog-fill" id="pf4" style="background:var(--a)"></div></div>
       <span class="prog-txt" id="pt4">0 / 5</span>
     </div>
     <div class="checklist" id="cl4">
-      <div class="check-item" onclick="tick(this,4)"><div class="check-box"></div><span class="check-text">Class discussion done — expanded definition of "accomplishment" on board</span></div>
-      <div class="check-item" onclick="tick(this,4)"><div class="check-box"></div><span class="check-text">Every student has filled in their Trophy Card (past win + current goal + symbol)</span></div>
-      <div class="check-item" onclick="tick(this,4)"><div class="check-box"></div><span class="check-text">Shout-Out Round done — everyone has received at least one peer recognition</span></div>
-      <div class="check-item" onclick="tick(this,4)"><div class="check-box"></div><span class="check-text">Trophy Wall is built and displayed</span></div>
+      <div class="check-item" onclick="tick(this,4)"><div class="check-box"></div><span class="check-text">Class discussion done — expanded definition of "accomplishment" on the board</span></div>
+      <div class="check-item" onclick="tick(this,4)"><div class="check-box"></div><span class="check-text">Every student has filled their Trophy Card (past win + goal + symbol)</span></div>
+      <div class="check-item" onclick="tick(this,4)"><div class="check-box"></div><span class="check-text">Shout-Out Round done — everyone has at least one peer recognition</span></div>
+      <div class="check-item" onclick="tick(this,4)"><div class="check-box"></div><span class="check-text">Trophy Wall is built and displayed with the banner</span></div>
       <div class="check-item" onclick="tick(this,4)"><div class="check-box"></div><span class="check-text">Closing ritual done — the moment is marked</span></div>
     </div>
   </div>
@@ -785,113 +777,96 @@ html,body{height:100%;background:var(--bg);color:var(--txt);font-family:var(--bo
       <div class="ai-spark" style="background:rgba(255,95,110,.15);color:var(--a)">✦</div>
       <div class="ai-header-text">
         <div class="ai-header-title">AI Idea Generator</div>
-        <div class="ai-header-sub">Help with shout-outs, trophy ideas, or reflection</div>
+        <div class="ai-header-sub">Help with shout-outs, trophy ideas, or finding your win</div>
       </div>
       <div class="ai-chevron">⌄</div>
     </div>
     <div class="ai-body">
       <div class="ai-prompts">
-        <button class="ai-prompt-btn" onclick="runAI(4,'Give me 10 examples of accomplishments that secondary school students often overlook or don\'t give themselves credit for. Write them as short affirmations.')">Overlooked wins</button>
-        <button class="ai-prompt-btn" onclick="runAI(4,'Help me write a specific, genuine shout-out for a classmate on a sticky note star. Ask me to describe something I\'ve noticed about them and then help me phrase it well.')">Write a shout-out</button>
-        <button class="ai-prompt-btn" onclick="runAI(4,'What are some trophy symbols or icons I could draw on my Trophy Card to represent different kinds of wins — not just academic ones? Give me 10 creative ideas.')">Trophy symbols</button>
+        <button class="ai-prompt-btn" onclick="runAI(4,'Give me 10 examples of accomplishments that secondary school students often overlook or don\'t give themselves credit for. Write them as short, affirming statements.')">Overlooked wins</button>
+        <button class="ai-prompt-btn" onclick="runAI(4,'Help me write a specific, genuine shout-out for a classmate on a sticky note star. Ask me to describe something I\'ve noticed about them, then help me phrase it well.')">Write a shout-out</button>
+        <button class="ai-prompt-btn" onclick="runAI(4,'What are some trophy symbols or icons I could draw to represent different kinds of wins — not just academic ones? Give me 10 creative drawing ideas.')">Trophy symbols</button>
         <button class="ai-prompt-btn" onclick="runAI(4,'I\'m trying to identify my own accomplishment from this term but I\'m stuck. Ask me 4 questions that will help me discover something I\'ve done that\'s worth celebrating.')">Find my win</button>
       </div>
       <div class="ai-custom">
         <input class="ai-input" id="ai-in4" placeholder="Ask anything about accomplishments..." onkeydown="if(event.key==='Enter')runAI(4,this.value)">
         <button class="ai-go" style="background:var(--a)" onclick="runAI(4,document.getElementById('ai-in4').value)">Ask ✦</button>
       </div>
-      <div class="ai-response" id="ai-res4">
-        <div class="ai-response-text" id="ai-txt4"></div>
-      </div>
+      <div class="ai-response" id="ai-res4"><div class="ai-response-text" id="ai-txt4"></div></div>
     </div>
   </div>
   <div class="spacer"></div>
 </div>
 
-</div><!-- /panels -->
+</div>
 
 <script>
 var counts=[0,0,0,0,0];
 var totals=[5,5,5,5,5];
-var colors=['var(--p)','var(--e)','var(--r)','var(--m)','var(--a)'];
+var clrs=['var(--p)','var(--e)','var(--r)','var(--m)','var(--a)'];
 
 function go(i){
   document.querySelectorAll('.nb').forEach(function(b){b.classList.remove('active')});
   document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active')});
   document.querySelector('[data-i="'+i+'"]').classList.add('active');
-  document.getElementById('pn'+i).classList.add('active');
-  document.getElementById('pn'+i).scrollTop=0;
+  var panel=document.getElementById('pn'+i);
+  panel.classList.add('active');
+  panel.scrollTop=0;
 }
 
 function tick(el,idx){
   el.classList.toggle('checked');
   var cb=el.querySelector('.check-box');
   if(el.classList.contains('checked')){
-    cb.textContent='✓';
-    cb.style.background=colors[idx];
-    cb.style.border='none';
-    counts[idx]++;
+    cb.textContent='✓';cb.style.background=clrs[idx];cb.style.border='none';counts[idx]++;
   } else {
-    cb.textContent='';
-    cb.style.background='transparent';
-    cb.style.border='2px solid var(--bdr2)';
-    counts[idx]--;
+    cb.textContent='';cb.style.background='transparent';cb.style.border='2px solid var(--bdr2)';counts[idx]--;
   }
-  var pct=(counts[idx]/totals[idx])*100;
+  var pct=Math.round((counts[idx]/totals[idx])*100);
   document.getElementById('pf'+idx).style.width=pct+'%';
   document.getElementById('pt'+idx).textContent=counts[idx]+' / '+totals[idx];
   var done=document.getElementById('db'+idx);
   done.style.display=(counts[idx]===totals[idx])?'block':'none';
   var nb=document.querySelector('[data-i="'+idx+'"]');
-  if(counts[idx]===totals[idx])nb.classList.add('done');
-  else nb.classList.remove('done');
+  if(counts[idx]===totals[idx])nb.classList.add('done');else nb.classList.remove('done');
 }
 
-function toggleAI(i){
-  document.getElementById('ai'+i).classList.toggle('open');
-}
+function toggleAI(i){document.getElementById('ai'+i).classList.toggle('open')}
 
-var PERMA_CONTEXT=[
-  "You are a helpful assistant for a classroom activity called the Joy Tree, part of the PERMA wellbeing framework (Positive Emotions segment). Students are secondary school students in Singapore. Be encouraging, practical, and age-appropriate. Keep responses under 200 words.",
-  "You are a helpful assistant for a classroom activity called the Engagement Playbook, part of the PERMA wellbeing framework (Engagement segment). Students are secondary school students in Singapore. Be encouraging, practical, and age-appropriate. Keep responses under 200 words.",
-  "You are a helpful assistant for a classroom activity called Web of Connections, part of the PERMA wellbeing framework (Relationships segment). Students are secondary school students in Singapore. Be encouraging, practical, and age-appropriate. Keep responses under 200 words.",
-  "You are a helpful assistant for a classroom activity called the Class Vision Scroll, part of the PERMA wellbeing framework (Meaning segment). Students are secondary school students in Singapore. Be encouraging, practical, and age-appropriate. Keep responses under 200 words.",
-  "You are a helpful assistant for a classroom activity called the Trophy Wall, part of the PERMA wellbeing framework (Accomplishment segment). Students are secondary school students in Singapore. Be encouraging, practical, and age-appropriate. Keep responses under 200 words."
+var CTX=[
+  "You are a helpful AI for a classroom PERMA wellbeing activity called the Joy Tree (Positive Emotions). Students are secondary school students in Singapore. Be warm, encouraging, and practical. Keep responses under 220 words. Use plain language — no jargon.",
+  "You are a helpful AI for a classroom PERMA wellbeing activity called the Engagement Playbook (Engagement). Students are secondary school students in Singapore. Be energetic, practical, and age-appropriate. Keep responses under 220 words.",
+  "You are a helpful AI for a classroom PERMA wellbeing activity called Web of Connections (Relationships). Students are secondary school students in Singapore. Be warm, encouraging, and practical. Keep responses under 220 words.",
+  "You are a helpful AI for a classroom PERMA wellbeing activity called the Class Vision Scroll (Meaning). Students are secondary school students in Singapore. Be thoughtful, encouraging, and practical. Keep responses under 220 words.",
+  "You are a helpful AI for a classroom PERMA wellbeing activity called the Trophy Wall (Accomplishment). Students are secondary school students in Singapore. Be warm, encouraging, and practical. Keep responses under 220 words."
 ];
 
-async function runAI(idx, prompt){
-  if(!prompt || !prompt.trim()) return;
+async function runAI(idx,prompt){
+  if(!prompt||!prompt.trim())return;
   var resBox=document.getElementById('ai-res'+idx);
   var txt=document.getElementById('ai-txt'+idx);
-  var btn=document.querySelectorAll('[onclick*="ai-go"]');
-
   resBox.classList.add('visible');
   txt.innerHTML='<div class="ai-loading"><div class="ai-dot"></div><div class="ai-dot"></div><div class="ai-dot"></div></div>';
-
-  var inEl=document.getElementById('ai-in'+idx);
-  if(inEl) inEl.value='';
-
-  try {
-    var resp=await fetch('https://api.anthropic.com/v1/messages',{
+  var inp=document.getElementById('ai-in'+idx);
+  if(inp)inp.value='';
+  try{
+    var r=await fetch('https://api.anthropic.com/v1/messages',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({
         model:'claude-sonnet-4-20250514',
         max_tokens:1000,
-        system: PERMA_CONTEXT[idx],
+        system:CTX[idx],
         messages:[{role:'user',content:prompt}]
       })
     });
-    var data=await resp.json();
+    var d=await r.json();
     var out='';
-    if(data.content && data.content.length>0){
-      data.content.forEach(function(block){if(block.type==='text')out+=block.text});
-    } else if(data.error){
-      out='⚠️ '+data.error.message;
-    }
+    if(d.content&&d.content.length>0){d.content.forEach(function(b){if(b.type==='text')out+=b.text});}
+    else if(d.error){out='⚠️ '+d.error.message;}
     txt.textContent=out||'No response received.';
-  } catch(e){
-    txt.textContent='⚠️ Could not connect. Check your internet connection and try again.';
+  }catch(e){
+    txt.textContent='⚠️ Could not connect. Check your internet and try again.';
   }
 }
 </script>
